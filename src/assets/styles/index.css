@@ -1,0 +1,189 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Satoshi Light */
+@font-face {
+  font-family: "Satoshi-Light";
+  src: url("../fonts/Satoshi_Complete/Satoshi-Light.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Satoshi Light Italic */
+@font-face {
+  font-family: "Satoshi-LightItalic";
+  src: url("../fonts/Satoshi_Complete/Satoshi-LightItalic.ttf")
+    format("truetype");
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* Satoshi Regular */
+@font-face {
+  font-family: "Satoshi-Regular";
+  src: url("../fonts/Satoshi_Complete/Satoshi-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Satoshi Italic */
+@font-face {
+  font-family: "Satoshi-Italic";
+  src: url("../fonts/Satoshi_Complete/Satoshi-Italic.ttf") format("truetype");
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* Satoshi Medium */
+@font-face {
+  font-family: "Satoshi-Medium";
+  src: url("../fonts/Satoshi_Complete/Satoshi-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Satoshi Medium Italic */
+@font-face {
+  font-family: "Satoshi-MediumItalic";
+  src: url("../fonts/Satoshi_Complete/Satoshi-MediumItalic.ttf")
+    format("truetype");
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* Satoshi Bold */
+@font-face {
+  font-family: "Satoshi-Bold";
+  src: url("../fonts/Satoshi_Complete/Satoshi-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Satoshi Bold Italic */
+@font-face {
+  font-family: "Satoshi-BoldItalic";
+  src: url("../fonts/Satoshi_Complete/Satoshi-BoldItalic.ttf")
+    format("truetype");
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* Satoshi Black */
+@font-face {
+  font-family: "Satoshi-Black";
+  src: url("../fonts/Satoshi_Complete/Satoshi-Black.ttf") format("truetype");
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Satoshi Black Italic */
+@font-face {
+  font-family: "Satoshi-BlackItalic";
+  src: url("../fonts/Satoshi_Complete/Satoshi-BlackItalic.ttf")
+    format("truetype");
+  font-weight: 900;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* Instrument Serif Regular */
+@font-face {
+  font-family: "InstrumentSerif-Regular";
+  src: url("../fonts/Instrument_Serif/InstrumentSerif-Regular.ttf")
+    format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Instrument Serif Italic */
+@font-face {
+  font-family: "InstrumentSerif-Italic";
+  src: url("../fonts/Instrument_Serif/InstrumentSerif-Italic.ttf")
+    format("truetype");
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 240 10% 3.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 3.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 3.9%;
+
+    --primary: 175 91% 23%;
+    --primary-foreground: 355.7 100% 97.3%;
+
+    --secondary: 240 4.8% 95.9%;
+    --secondary-foreground: 240 5.9% 10%;
+
+    --muted: 240 4.8% 95.9%;
+    --muted-foreground: 240 3.8% 46.1%;
+
+    --accent: 240 4.8% 95.9%;
+    --accent-foreground: 240 5.9% 10%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 174 42% 22%;
+    --input: 174 42% 22%;
+    --ring: 175 91% 23%;
+
+    --radius: 1rem;
+  }
+}
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  *::-webkit-scrollbar {
+    @apply hidden;
+  }
+
+  body {
+    @apply font-sans_regular bg-background text-foreground;
+    /* @apply font-sans_regular cursor-[url(https://img.icons8.com/?size=100&id=GKmXaly2KTHV&format=png&color=000000),auto] bg-background text-foreground; */
+  }
+
+  h1,
+  h2,
+  h3 {
+    @apply font-serif_regular;
+  }
+
+  h1 {
+    @apply text-5xl md:text-7xl lg:text-8xl;
+  }
+
+  h2 {
+    @apply text-4xl leading-9 md:text-6xl lg:text-[64px];
+  }
+
+  h3 {
+    @apply text-4xl;
+  }
+}
