@@ -270,7 +270,7 @@ export function generateRandomListings() {
     images: Array(Math.floor(Math.random() * 8))
       .fill(null)
       .map(
-        (_, i) =>
+        (_) =>
           `https://picsum.photos/${Math.floor(
             Math.random() * 250,
           )}/${Math.floor(Math.random() * 350)}`,

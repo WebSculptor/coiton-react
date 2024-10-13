@@ -1,13 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { useContractInstance } from "@/hooks/test/useContractInstance";
-import { useListings } from "@/hooks/test/useListing";
-import {
-  generateRandomListings,
-  stringToByteArray,
-  byteArrayToString,
-  stringToFeltArray,
-  feltArrayToString,
-} from "@/lib/utils";
+import { generateRandomListings } from "@/lib/utils";
 import {
   useSendTransaction,
   useTransactionReceipt,

@@ -10,7 +10,7 @@ export default function StakeListingFee() {
   const walletAddress = useWalletStore((state) => state.walletAddress);
   const isWalletConnected = useWalletStore((state) => state.isWalletConnected);
 
-  const { transaction, receipt } = stakeListingFee(amount);
+  const { transaction } = stakeListingFee(amount);
 
   const handleStakeAmount = () => {
     if (!amount || !isWalletConnected) {

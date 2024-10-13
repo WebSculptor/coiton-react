@@ -17,8 +17,7 @@ import {
 } from "@/components/ui/table";
 import { useOrganization } from "@/hooks/test/useOrganization";
 import { truncateAddr } from "@/lib/utils";
-import { ChevronsLeft, ChevronsRight, ExternalLink } from "lucide-react";
-import { Link } from "react-router-dom";
+import { ChevronsLeft, ChevronsRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 export default function Organizations() {

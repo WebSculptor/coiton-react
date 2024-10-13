@@ -1,4 +1,4 @@
-import { useERCs } from "@/hooks/test/useErcs";
+import { useERCs } from "@/hooks/test/useERCs";
 import { truncateAddr } from "@/lib/utils";
 import { useState } from "react";
 
