@@ -129,6 +129,15 @@ function ConnectWallet() {
     }
   }, [status, connectors, walletAddress]);
 
+  // Determine which connectors are available (installed) and which are not
+  const availableConnectors = connectors.filter((connector) =>
+    connector.available(),
+  );
+  const unavailableConnectors = connectorsInfo.filter(
+    (info) =>
+      !availableConnectors.some((connector) => connector.id === info.id),
+  );
+
   return (
     <div className="flex items-center gap-4">
       {isWalletConnected ? (
@@ -139,7 +148,6 @@ function ConnectWallet() {
               Connected {connector?.name}: {address}
             </span>
           </p>
-
           <p
             className="font-sans_bold underline"
             role="button"
@@ -149,31 +157,31 @@ function ConnectWallet() {
           </p>
         </div>
       ) : (
-        connectorsInfo.map((connectorInfo) => {
-          const connector = connectors.find((c) => c.id === connectorInfo.id);
+        <>
+          {/* Show Connect button for available (installed) connectors */}
+          {availableConnectors.map((connector) => (
+            <button
+              key={connector.id}
+              className="flex cursor-pointer items-center justify-center rounded-none border border-border/30 px-5 py-1.5 font-semibold tracking-wide hover:bg-secondary/80"
+              onClick={() => handleConnectWallet(connector)}
+            >
+              Connect {connector.name} wallet
+            </button>
+          ))}
 
-          return (
-            <div key={connectorInfo.id} className="flex h-[58px] items-center">
-              {connector ? (
-                <button
-                  className="flex cursor-pointer items-center justify-center rounded-none border border-border/30 px-5 py-1.5 font-semibold tracking-wide hover:bg-secondary/80"
-                  onClick={() => handleConnectWallet(connector)}
-                >
-                  Connect {connectorInfo.name} wallet
-                </button>
-              ) : (
-                <Link
-                  to={connectorInfo.installLink}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex cursor-pointer items-center justify-center rounded-none border border-border/30 px-5 py-1.5 font-semibold tracking-wide hover:bg-secondary/80"
-                >
-                  Install {connectorInfo.name} wallet
-                </Link>
-              )}
-            </div>
-          );
-        })
+          {/* Show Install links for unavailable (not installed) connectors */}
+          {unavailableConnectors.map((connectorInfo) => (
+            <Link
+              key={connectorInfo.id}
+              to={connectorInfo.installLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex cursor-pointer items-center justify-center rounded-none border border-border/30 px-5 py-1.5 font-semibold tracking-wide hover:bg-secondary/80"
+            >
+              Install {connectorInfo.name} wallet
+            </Link>
+          ))}
+        </>
       )}
     </div>
   );
