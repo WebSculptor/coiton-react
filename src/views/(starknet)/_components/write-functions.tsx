@@ -4,7 +4,7 @@ import { Label } from "@/components/ui/label";
 import { useWriteData } from "@/hooks/starknet/useWriteData";
 import { bigintReplacer, cn } from "@/lib/utils";
 import { ChevronDown } from "lucide-react";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 
 const WriteFunctions = ({ functions }: { functions: FunctionItem[] }) => {
   const [currentQuery, setCurrentQuery] = useState<{

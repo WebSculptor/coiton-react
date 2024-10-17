@@ -1,12 +1,9 @@
-import { contract } from "@/lib/contract";
-import { feltToShortString, shortStringToFelt } from "@/lib/utils";
+import { shortStringToFelt } from "@/lib/utils";
 import {
-  useReadContract,
   useSendTransaction,
   useTransactionReceipt,
 } from "@starknet-react/core";
 import { useEffect, useMemo, useState } from "react";
-import { toast } from "sonner";
 import { useContractInstance } from "../test/useContractInstance";
 import { Contract } from "starknet";
 
