@@ -306,3 +306,27 @@ export function generateRandomListings() {
 
   return listingDetails;
 }
+
+export function bigintReplacer(_key: string, value: any) {
+  if (typeof value === "bigint") {
+    return value.toString(); // Convert BigInt to string
+  }
+  return value; // Return other types unchanged
+}
+
+export function serializeData(data: any): any {
+  // If the value is an array, serialize each item
+  if (Array.isArray(data)) {
+    return data.map(serializeData);
+  }
+
+  // If the value is an object, serialize each key-value pair
+  if (data !== null && typeof data === "object") {
+    return Object.fromEntries(
+      Object.entries(data).map(([key, value]) => [key, serializeData(value)]),
+    );
+  }
+
+  // For all other data types, return the value as is
+  return data;
+}
