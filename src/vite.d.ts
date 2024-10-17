@@ -66,6 +66,22 @@ declare type ORGANIZATION = {
   domain: string;
 };
 
+declare type FunctionItem = {
+  readonly type: "function";
+  readonly name: string;
+  readonly inputs: readonly {
+    readonly name: string;
+    readonly type: string;
+  }[];
+  readonly outputs: readonly { readonly type: string }[];
+  readonly state_mutability: "view" | "external";
+};
+
+declare type CategorizedFunctions = {
+  read: FunctionItem[];
+  write: FunctionItem[];
+};
+
 //? ============= INTERFACES ============= ?//
 
 declare interface PARENT_WRAPPER {

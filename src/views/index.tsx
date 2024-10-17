@@ -4,7 +4,7 @@ import HomeView from "./(public)/home.view";
 import ListingsView from "./(public)/listings.view";
 import TeamsView from "./(public)/team.view";
 import TokenView from "./(public)/token.view";
-import TestView from "./(starknet)/test.view";
+import StarknetView from "./(starknet)/starknet.view";
 
 export const views = {
   home: <HomeView />,
@@ -15,5 +15,5 @@ export const views = {
   blog: <BlogView />,
 
   // test
-  test: <TestView />,
+  test: <StarknetView />,
 };

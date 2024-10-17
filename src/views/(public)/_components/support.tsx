@@ -1,5 +1,3 @@
-"use client";
-
 import { assets } from "@/assets";
 import { motion } from "framer-motion";
 import { X } from "lucide-react";
@@ -37,7 +35,7 @@ export default function Support() {
             }}
             className="flex items-center gap-4"
           >
-            <div className="font-sans_regular md:font-sans_medium flex h-[38px] flex-1 items-center justify-center rounded-full border border-primary text-sm text-primary sm:w-44 sm:flex-none md:w-[248px] md:text-base">
+            <div className="flex h-[38px] flex-1 items-center justify-center rounded-full border border-primary font-sans_regular text-sm text-primary sm:w-44 sm:flex-none md:w-[248px] md:font-sans_medium md:text-base">
               Starknet-Backed
             </div>
 
